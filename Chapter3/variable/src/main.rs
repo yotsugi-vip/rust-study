@@ -1,7 +1,7 @@
 //const MAX_POINTS: u32 = 100_000;
 
 fn main() {
-    _show_po();
+    _twelve_days_of_christmas();
 }
 
 fn _mutable() {
@@ -62,7 +62,67 @@ fn _plus_one(x: i32) -> i32 {
     x + 1
 }
 
-fn _show_po(){
+fn _show_po() {
     let x = _plus_one(5);
     println!("the value is {}", x);
+}
+
+fn _variable_if() {
+    let state = true;
+    let a = if state { 10 } else { 15 };
+    println!("the value is {}", a);
+}
+
+fn _collection_for() {
+    let a = [10, 20, 30, 40, 50];
+    for el in a.iter() {
+        println!("the value is {}", el);
+    }
+}
+
+fn _convert_c_to_f(c: f64) -> f64 {
+    let ret = c * 1.8 + 32.0;
+    return ret;
+}
+
+fn _fibo(index: u128) -> u128 {
+    let mut f0: u128 = 0;
+    let mut f1: u128 = 1;
+    let mut _buff: u128 = 0;
+    let mut i = 0;
+
+    while i != index {
+        _buff = f1;
+        f1 = f0 + f1;
+        f0 = _buff;
+        i = i + 1;
+        println!("f0:{} f1:{} i:{}", f0, f1, i);
+    }
+    return f0;
+}
+
+fn _twelve_days_of_christmas() {
+    let mut val = [
+        "and a partridge in a pear tree.",
+        "two turtle doves,",
+        "three French hens,",
+        "four calling birds,",
+        "five golden rings.",
+        "six geese a-laying,",
+        "seven swans a-swimming,",
+        "eight maids a-milking,",
+        "nine ladies dancing,",
+        "ten lords a-leaping,",
+        "eleven pipers piping,",
+        "twelve drummers drumming,",
+    ];
+
+    val.reverse();
+    
+    println!("12.");
+    println!("On the twelfth day of Christmas,my true love sent to me");
+        
+    for el in val.iter() {
+        println!("{}", el);
+    }
 }
